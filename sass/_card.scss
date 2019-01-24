@@ -1,0 +1,38 @@
+.card {
+	
+	display: inline-block;
+	width: 40%;
+	margin: 4%;
+	
+	background: #CFF7E2;
+	border: 1px solid #CCC;
+	
+	img {
+		
+		display: inline-block;
+		width: 20%;
+		margin: 2%;
+		
+	}
+	
+	.details {
+	
+		margin: 2%;
+		float: right;
+		width: 72%;
+		
+		h3 {
+			text-transform: uppercase;
+		}
+		
+		p{
+			margin-bottom: 1em;
+		}
+		
+		ul {
+			li {
+				list-style-position: inside;
+			}
+		}
+	}
+}

@@ -8,8 +8,8 @@
 			'ANGRY'		=>  [1,0,0],
 			'HAPPY'		=>  [1,1,0],
 			'SAD' 		=>  [0,0,1], 
-			'SURPRISED' =>  [1,0,1],
-			'CONFUSED'	=>  [1,1,1]
+			'SURPRISED' =>  [1,1,1],
+			'CONFUSED'	=>  [1,0,1]
 		];
 		
 		$red = [];
@@ -59,10 +59,11 @@
   
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css?v=1.0">
+  <script src="https://unpkg.com/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script>
 
 </head>
 <body >
-	
+	<div class="wrapper">
 	<?php
 		
 		$jsons = scandir( __DIR__ . '/cache' );
@@ -84,12 +85,13 @@
 						
 			?>
 			<div class="card"  >
+				
 				<div class="picture">
 					<div class="color" style="background-color: <?php echo mixColor($emotions) ?>" ></div>
-					<img src="optimized/<?php echo $filename ?>" />
+					<div class="img" style="background-image: url('optimized/<?php echo $filename ?>')" ></div>
 				</div>
 				
-				<div class="details" >
+				<div class="details" style="background-color: <?php echo mixColor($emotions) ?>" >
 					
 					<h3>Gender</h3>
 					<p> <?php echo $details->Gender->Value ?> (<?php echo round($details->Gender->Confidence) ?>%) </p>
@@ -109,6 +111,6 @@
 		}
 			
 	?>	
-	
+	</div>
 </body>
 </html>

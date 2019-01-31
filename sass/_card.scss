@@ -1,55 +1,116 @@
-.card {
-	
-	display: inline-block;
-	width: 40%;
-	margin: 4%;
-	
-	background: #CFF7E2;
-	border: 1px solid #CCC;
-	
-	.picture {
-	
-		display: inline-block;
+*, *:before, *:after {
+	margin: 0;
+	padding: 0;
+	border: none;
+	box-sizing: border-box;
+}
+
+body {
+	width: 100%;
+}
+
+.wrapper {
+
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+
+	.card {
+		
 		position: relative;
-		width: 20%;
-		margin: 2%;
-	
-		img {
-			display: block;
+		width: calc(100% / 8);
+		height: 22vw;
+		
+		min-width: 175px;
+		min-height: 305px;
+		
+		display: inline-block;
+		margin-top: -5px;
+		overflow: hidden;
+		
+		.picture {
+		
+			display: inline-block;
+			position: relative;
+			
 			width: 100%;
+			height: 100%;
+		
+			.img {
+				display: block;
+				width: 100%;
+				height: 100%;
+				
+				background-size: cover;
+				background-position: center center;
+			}
+			
+			.color {
+				
+				position: absolute;
+				top: 0;
+				left: 0;
+				
+				display: block;
+				width: 100%;
+				height: 100%;
+				mix-blend-mode: overlay;
+			}
+		
 		}
 		
-		.color {
+		.details {
+			
+			transform: translateY(100%);
+			transition: 0.4s;
+			
+			display: block;
 			
 			position: absolute;
 			top: 0;
 			left: 0;
 			
-			display: block;
 			width: 100%;
 			height: 100%;
-			mix-blend-mode: overlay;
+			
+			padding: 1em;
+			color: #AAA;
+			
+			h3 {
+				display: block;
+				text-align: center;
+				margin-bottom: 0.5em;
+			}
+			
+			p {
+				display: block;
+				text-align: center;
+				margin-bottom: 0.5em;
+			}
+			
+			ul {
+				
+				margin: 0.5em;
+				margin-top: 1em;
+				padding-top: 1em;
+				border-top: 1px solid #999;
+						
+				li {
+					list-style-position: inside;
+					list-style: none;
+					margin: 0;
+					text-align: center;
+					display: block;
+				}
+				
+			}
 		}
-	
-	}
-	
-	.details {
-	
-		margin: 2%;
-		float: right;
-		width: 72%;
 		
-		h3 {
-			text-transform: uppercase;
-		}
-		
-		p{
-			margin-bottom: 1em;
-		}
-		
-		ul {
-			li {
-				list-style-position: inside;
+		cursor: pointer;
+		&:hover {
+			.details {
+				display: block;
+				transform: translateY(0%);
 			}
 		}
 	}
